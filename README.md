@@ -1,17 +1,3 @@
-<a id="readme-top"></a>
-
-# not much
-
-<img src="https://raw.githubusercontent.com/imgios/not-much/main/images/tn.png" />
-
-`not-much` is a minimal Hugo theme that I use for my personal website. It doesn't have any fancy shortcode or useless feature.
-
-**It's basic, simple and minimal.**
-
-> 🧪 Demo: https://imgios.github.io/not-much/
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
