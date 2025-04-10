@@ -2,8 +2,6 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Prerequisites
 
 - Git
@@ -33,8 +31,6 @@ Press Ctrl+C to stop
 
 Now you are ready to update the theme and see the changes live @ [localhost](http://localhost:1313/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Deployment
 
 The theme can be installed in two different ways:
@@ -52,15 +48,11 @@ The first option is quite limited as you won't be able to edit the templates if 
 
 Once done, update (or add) the `theme` parameter in your website configuration file to `theme = not-much`.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Configuration
 
 You can update the website index, menu and copyright directly in your Hugo site `config.toml`.
 
 A reference can be found in [`exampleSite/config.toml`](https://github.com/imgios/not-much/blob/main/exampleSite/config.toml)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### Homepage
 
@@ -75,8 +67,6 @@ This is a demo of the `not-much` theme, built with Hugo, and is intended to be t
 ```
 
 Using the page content for the description gives you the flexibility to extend the description by adding inline code, links, lists and more. The use of headings is not really intended there, but feel free to do so if you like.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### Menu items and custom links
 
@@ -103,8 +93,6 @@ The main menu can be customised as you prefer to add site-related locations (e.g
   url = "https://github.com/imgios"
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 #### Color Palette
 
 This theme lets you select both the theme style and color palette to use in your Hugo website. The default is a dark black and red-ish, but new palettes can be easily added.
@@ -128,8 +116,6 @@ palette = "default"
 | palette | `catpuccin,dracula,default,custom-palette-name` <br/><sub> where `custom-palette-name` is available as `assets/css/palette/custom-palette-name.css` </sub> |
 
 New palettes can be stored under `assets/css/palette`.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### Copyright
 
@@ -161,8 +147,6 @@ You can enable the posts summary rendering in the Posts list by configuring the 
 showPostsSummary = true
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 #### Table of Contents
 
 You can display the Table of Contents in the post by configuring the `toc` parameter in the header:
@@ -175,8 +159,6 @@ toc: true
 ```
 
 The Table of Contents is not displayed by default.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Built With
 
@@ -200,16 +182,10 @@ If you have a suggestion that would make this better, please fork the repo and c
 4. Push to the Branch (`git push origin feat/cool-feature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/imgios/not-much/tags). 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
