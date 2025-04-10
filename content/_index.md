@@ -1,5 +1,5 @@
 ---
-lead: "👨🏻‍💻 Machine Learning Engineer @ EPICS ASU"
+title: "👨🏻‍💻 Machine Learning Engineer @ EPICS ASU"
 ---
 
 I’m Tharun Poobalan, with a Master's Degree in Robotics and Artificial Intelligence, in love with everything related to Language ➕ Agents. I usually make things to learn something new, using different technologies and most of the time they’re a public repository. Feel free to read more [about myself 🤖](./about).
