@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whies on Tharun Poobalan</title>
+    <link>http://localhost:1313/why/</link>
+    <description>Recent content in Whies on Tharun Poobalan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Sample custom notice © {year}</copyright>
+    <atom:link href="http://localhost:1313/why/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/why/why/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/why/why/</guid>
+      <description>&lt;p&gt;I spent a significant amount of time thinking about this fucking annoying ass word in the context of my work &amp;amp; life. In this blog I want to share a few of my notes. Maybe you find something useful in my brain soup.&lt;/p&gt;&#xA;&lt;h2 id=&#34;finding-happiness&#34;&gt;finding happiness&lt;/h2&gt;&#xA;&lt;p&gt;The most privileged answer &amp;amp; the one I am going to give you is to focus on &lt;em&gt;all&lt;/em&gt; of these factors at the same time.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

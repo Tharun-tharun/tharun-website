@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on Tharun Poobalan</title>
+    <link>http://localhost:1313/tags/tool/</link>
+    <description>Recent content in Tool on Tharun Poobalan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Tharun P © 2025</copyright>
+    <lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Model Context Protocol (MCP) an overview</title>
+      <link>http://localhost:1313/posts/mcp-post/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mcp-post/</guid>
+      <description>The Model Context Protocol (MCP) is an open standard introduced by Anthropic with the goal to standardize how AI applications (chatbots, IDE assistants, or custom agents) connect with external tools, data sources, and systems.</description>
+    </item>
+  </channel>
+</rss>

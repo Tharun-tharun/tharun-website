@@ -1,0 +1,53 @@
+# The following line is needed
+# when running the example site
+# from a subdir of the theme
+
+title = "Tharun Poobalan"
+theme = "not-much"
+languageCode = "en-us"
+baseURL = "https://example.org/"
+copyright = "Tharun P © 2025"
+
+[markup]
+  [markup.highlight]
+    style = 'dracula'
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+
+[params]
+theme = "light"
+palette = "dracula"
+showThemeNotice = true
+showPostsSummary = true
+
+# Navigation
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "home"
+    title = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "technical blogs"
+    name = "technical blogs"
+    title = "technical blogs"
+    url = "/posts"
+    weight = 3
+  
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "About"
+    url = "/about"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "why?"
+    name = "why?"
+    title = "Why?"
+    url = "/why"
+    weight = 4

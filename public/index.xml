@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tharun Poobalan</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Tharun Poobalan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Tharun P © 2025</copyright>
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>why?</title>
+      <link>http://localhost:1313/why/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/why/</guid>
+      <description>&lt;p&gt;I spent a significant amount of time thinking about this annoying word in the context of my work &amp;amp; life. In this why? I want to share a few of my notes. Maybe you find something useful in my brain soup.&lt;/p&gt;&#xA;&lt;h2 id=&#34;finding-happiness&#34;&gt;finding happiness&lt;/h2&gt;&#xA;&lt;p&gt;The most privileged answer &amp;amp; the one I am going to give you is to focus on &lt;em&gt;all&lt;/em&gt; of these factors at the same time.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; family&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; health&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; money&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; travel across the world and your mind&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; deeply inspire others&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; make the world a better place&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ideally, from the moment you wake up you should work towards maximising atleast one of these buckets while maintaining (not deteriorating) the other buckets. Sometimes doing this is impossible, but the best &lt;a href=&#34;https://en.wikipedia.org/wiki/Poka-yoke&#34;&gt;forcing function&lt;/a&gt; I could leave you with is &amp;ndash; look at your happiness as a multiplication of these factors and &lt;em&gt;not&lt;/em&gt; addition. When a single factor approaches zero, you start becoming extremely unhappy and it doesn&amp;rsquo;t really matter how good the other factors are at that point.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo Table of Contents showcase</title>
+      <link>http://localhost:1313/posts/toc-showcase/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/toc-showcase/</guid>
+      <description>This post shows the default Hugo Table of Contents and how not-much handle it.</description>
+    </item>
+    <item>
+      <title>Model Context Protocol (MCP) an overview</title>
+      <link>http://localhost:1313/posts/mcp-post/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mcp-post/</guid>
+      <description>The Model Context Protocol (MCP) is an open standard introduced by Anthropic with the goal to standardize how AI applications (chatbots, IDE assistants, or custom agents) connect with external tools, data sources, and systems.</description>
+    </item>
+    <item>
+      <title>Beyond Scale Swarm Intelligence ANT Approach</title>
+      <link>http://localhost:1313/posts/ant-ai/</link>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ant-ai/</guid>
+      <description>Rethinking AI:Progress Why the Future of LLMs May Look More Like Ants Than AGI.</description>
+    </item>
+    <item>
+      <title>Hugo shortcodes</title>
+      <link>http://localhost:1313/posts/hugo-shortcodes/</link>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hugo-shortcodes/</guid>
+      <description>This post shows the default Hugo shortcodes and how they are rendered.</description>
+    </item>
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>http://localhost:1313/posts/markdown-syntax-guide/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/markdown-syntax-guide/</guid>
+      <description>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</description>
+    </item>
+  </channel>
+</rss>

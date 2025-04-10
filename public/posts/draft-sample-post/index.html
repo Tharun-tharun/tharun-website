@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="http://localhost:1313/favicon.ico" />
+<meta property="og:url" content="http://localhost:1313/posts/draft-sample-post/">
+  <meta property="og:site_name" content="Tharun Poobalan">
+  <meta property="og:title" content="Model Context Protocol (MCP) an overview">
+  <meta property="og:description" content="The Model Context Protocol (MCP) is an open standard introduced by Anthropic with the goal to standardize how AI applications (chatbots, IDE assistants, or custom agents) connect with external tools, data sources, and systems.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-27T00:00:00+00:00">
+    <meta property="article:tag" content="Mcp">
+    <meta property="article:tag" content="Tool">
+
+<title>Tharun Poobalan | Model Context Protocol (MCP) an overview</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+  
+      <link rel="stylesheet" href="/css/palette/dracula.css">
+
+      <script src="/js/main.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+  
+<body
+>
+  
+  <main>
+    
+  <div class="container pt-5">
+    <div class="row mt-5 pt-5">
+      
+  <nav aria-label="breadcrumb" class="small">
+    <ol class="breadcrumb fw-bold">
+    <li class="breadcrumb-item">
+      <a href="/"
+        
+      >home</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/about"
+        
+      >about</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/posts"
+        class="text-decoration-underline link-offset-3"
+        
+      >posts</a>
+      
+    </li>
+    </ol>
+  </nav>
+
+    </div>
+    
+    <div class="post">
+      <header class="mb-4">
+        <h1 class="text-uppercase">Model Context Protocol (MCP) an overview</h1>
+        
+        
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item small">
+              
+              <time datetime="2025-02-27T00:00:00&#43;00:00">February 27, 2025</time>
+            </li>
+            
+            
+            <li class="breadcrumb-item small">
+              5 minutes
+            </li>
+          </ol>
+        </div>
+      </header>
+      <article>
+        <p>Think of it like USB for AI integrations. Before standards like USB, connecting peripherals required a mess of different ports and custom drivers. Similarly, integrating AI applications with external tools and systems is/was an &ldquo;M×N problem&rdquo;.
+If you have M different AI applications (Chat, RAG 1, custom agents, etc.) and N different tools/systems (GitHub, Slack, Asana, databases, etc.), you might need to build M×N different integrations. This leads to duplicated effort across teams, inconsistent implementations.</p>
+<figure><img src="/api.png"><figcaption>
+      <h4>Architecture overview</h4>
+    </figcaption>
+</figure>
+
+<p>MCP aims to simplify this by providing a common API and transforming this into an &ldquo;M+N problem&rdquo;. Tool creators build N MCP servers (one for each system), while application developers build M MCP clients (one for each AI application). MCP defines a client-server architecture where:</p>
+<ul>
+<li><code>Hosts</code>: Applications the user interacts with (e.g., Claude Desktop, an IDE like Cursor, a custom agent).</li>
+<li><code>Clients</code>: External programs that expose Tools, Resources and Prompts via standard API to the AI model via the client.</li>
+<li><code>Servers</code>: External programs that expose Tools, Resources and Prompts via standard API to the AI model via the client.</li>
+</ul>
+<p>The current components of MCP servers include:</p>
+<ol>
+<li><code>Tools (Model-controlled):</code>: These are data sources that LLMs can access, similar to GET endpoints in a REST API. Resources provide data without performing significant computation, no side effects. Part of the context/request</li>
+<li><code>Resources (Application-controlled)</code>: Container runtime responsible for running containers</li>
+<li><code>Prompts (User-controlled):</code> These are pre-defined templates to use tools or resources in the most optimal way. Selected before running inference</li>
+</ol>
+<figure><img src="/overview.png"><figcaption>
+      <h4>Overview</h4>
+    </figcaption>
+</figure>
+
+<h1 id="how-does-mcp-work">How does MCP work?</h1>
+<p>MCP operates on the client-server model described earlier. Here’s a simplified flow:</p>
+<figure><img src="/architecture.png"><figcaption>
+      <h4>MCP operate Server</h4>
+    </figcaption>
+</figure>
+
+<ol>
+<li>
+<p><code>Initialization:</code> When a Host application starts it creates N MCP Clients, which exchange information about capabilities and protocol versions via a handshake.</p>
+</li>
+<li>
+<p><code>Discovery:</code> Clients requests what capabilities (Tools, Resources, Prompts) the server offers. The Server responds with a list and descriptions.</p>
+</li>
+<li>
+<p><code>Context Provision:</code> The Host application can now make resources and prompts available to the user or parses the tools into a LLM compatible format, e.g. JSON Function calling</p>
+</li>
+<li>
+<p><code>Invocation:</code> If the LLM determines it needs to use a Tool (e.g., based on the user&rsquo;s request like &ldquo;What are the open issues in the &lsquo;X&rsquo; repo?&rdquo;), the Host directs the Client to send an invocation request to the appropriate Server.</p>
+</li>
+<li>
+<p><code>Execution:</code> The Server receives the request (e.g., fetch_github_issues with repo &lsquo;X&rsquo;), executes the underlying logic (calls the GitHub API), and gets the result.</p>
+</li>
+<li>
+<p><code>Response:</code> The Server sends the result back to the Client.</p>
+</li>
+<li>
+<p><code>Completion:</code>  The Client relays the result to the Host, which incorporates it into the LLM&rsquo;s context, allowing the LLM to generate a final response for the user based on the fresh, external information.</p>
+</li>
+</ol>
+<h2 id="mcp-server">MCP server</h2>
+<p>MCP Servers are the bridge/API between the MCP world and the specific functionality of an external system (an API, a database, local files, etc.). They are essentially wrappers that expose these external capabilities according to the MCP specification.</p>
+<p>Servers can be built in various languages (Python, TypeScript, Java, Rust, etc.) as long as they can communicate over the supported transports. Servers communicate with clients primarily via two methods:</p>
+<ul>
+<li><code>stdio (Standard Input/Output)</code>: Used when Client and Server run on the same machines. This is simple and effective for local integrations (e.g., accessing local files or running a local script).</li>
+<li><code>HTTP via SSE (Server-Sent Events)</code>: The Client connects to the Server via HTTP. After an initial setup, the Server can push messages (events) to the Client over a persistent connection using the SSE standard.</li>
+</ul>
+<p>Example of how to build an MCP server with Python and <a href="https://github.com/jlowin/fastmcp/tree/main">FastMCP</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>from fastmcp import FastMCP
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="font-weight:bold"># Create an MCP server
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>mcp = FastMCP(&#34;Demo&#34;)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="font-weight:bold"># Add a tool, will be converted into JSON spec for function calling
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>@mcp.tool()
+</span></span><span style="display:flex;"><span>def add(a: int, b: int) -&gt; int:
+</span></span><span style="display:flex;"><span>    &#34;&#34;&#34;Add two numbers&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>    return a + b
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="font-weight:bold"># Add a data resource, e.g. displayed on new chats
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>@mcp.resource(&#34;greeting://{name}&#34;)
+</span></span><span style="display:flex;"><span>def get_greeting(name: str) -&gt; str:
+</span></span><span style="display:flex;"><span>    &#34;&#34;&#34;Get a personalized greeting&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>    return f&#34;Hello, {name}!&#34;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="font-weight:bold"># Specific prompt templates for better use
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>@mcp.prompt()
+</span></span><span style="display:flex;"><span>def review_code(code: str) -&gt; str:
+</span></span><span style="display:flex;"><span>    return f&#34;Please review this code:\n\n{code}&#34;
+</span></span></code></pre></div><p>List of pre-build and community build MCP servers:</p>
+<ul>
+<li><a href="https://github.com/punkpeye/awesome-mcp-servers">Awesome-mcp-servers</a></li>
+<li><a href="https://github.com/modelcontextprotocol/servers">Servers</a></li>
+<li><a href="https://mcp.composio.dev/">Managed MCP server</a></li>
+</ul>
+<h2 id="mcp-clients">MCP Clients</h2>
+<p>MCP Clients are part of Host applications (the IDE, chatbot, etc.) that manage the communication with a specific MCP Server.</p>
+<ul>
+<li><code>Role:</code> Handle connection management, capability discovery, request forwarding, and response handling according to the MCP spec.</li>
+<li><code>Examples of Hosts/Clients:</code>
+<ul>
+<li><code>UI Apps:</code> Claude Desktop, Microsoft Copilot Studio, LibreChat, Claude Code</li>
+<li><code>IDEs:</code> Cursor, Windsurf, Continue, Zed, Cline</li>
+<li><code>Custom Agents</code> (Python/TypeScript)
+<ul>
+<li>Firebase Genkit</li>
+<li>LangGraph</li>
+<li>OpenAI agents sdk</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Example of how to build an MCP client with Python and mcp.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>from mcp import ClientSession, StdioServerParameters, types
+</span></span><span style="display:flex;"><span>from mcp.client.stdio import stdio_client
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="font-weight:bold"># Commands for running/connecting to MCP Server
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>server_params = StdioServerParameters(
+</span></span><span style="display:flex;"><span>    command=&#34;python&#34;,  # Executable
+</span></span><span style="display:flex;"><span>    args=[&#34;example_server.py&#34;],  # Optional command line arguments
+</span></span><span style="display:flex;"><span>    env=None,  # Optional environment variables
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>async with stdio_client(server_params) as (read, write):
+</span></span><span style="display:flex;"><span>    async with ClientSession(
+</span></span><span style="display:flex;"><span>        read, write, sampling_callback=handle_sampling_message
+</span></span><span style="display:flex;"><span>    ) as session:
+</span></span><span style="display:flex;"><span>        # Initialize the connection
+</span></span><span style="display:flex;"><span>        await session.initialize()
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        # List available prompts
+</span></span><span style="display:flex;"><span>        prompts = await session.list_prompts()
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        # Get a prompt
+</span></span><span style="display:flex;"><span>        prompt = await session.get_prompt(
+</span></span><span style="display:flex;"><span>            &#34;example-prompt&#34;, arguments={&#34;arg1&#34;: &#34;value&#34;}
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        # List available resources
+</span></span><span style="display:flex;"><span>        resources = await session.list_resources()
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        # List available tools
+</span></span><span style="display:flex;"><span>        tools = await session.list_tools()
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        # Read a resource
+</span></span><span style="display:flex;"><span>        content, mime_type = await session.read_resource(&#34;file://some/path&#34;)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        # Call a tool
+</span></span><span style="display:flex;"><span>        result = await session.call_tool(&#34;tool-name&#34;, arguments={&#34;arg1&#34;: &#34;value&#34;})
+</span></span></code></pre></div><h2 id="acknowledgements">Acknowledgements</h2>
+<p>This overview was compiled with the help of deep and manual research, drawing inspiration and information from several excellent resources, including:</p>
+<ul>
+<li><a href="https://www.philschmid.de/mcp-introduction">MCP Overview</a></li>
+<li><a href="https://python.useinstructor.com/blog/2025/03/27/understanding-model-context-protocol-mcp/#openai-agent-sdk">What is MCP</a></li>
+</ul>
+
+      </article>
+      
+  <div class="tags pb-4 pt-2">
+    
+    
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/mcp/">Mcp</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/tool/">Tool</a>
+  </div>
+
+      <div class="row">
+    <div class="col-md">
+        
+        <a href="http://localhost:1313/posts/hugo-shortcodes/">
+            <span>previous: </span>
+            <span>Hugo shortcodes</span>
+        </a>
+        
+    </div>
+    <div class="col-md text-md-end">
+        
+        <a href="http://localhost:1313/posts/toc-showcase/">
+            <span>next: </span>
+            <span>Hugo Table of Contents showcase</span>
+        </a>
+        
+    </div>
+</div>
+    </div>
+  </div>
+  <footer>
+    <div class="container mt-4 pb-1">
+    <p class="small opacity-75">
+        Sample custom notice © 2025
+        
+        // powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/imgios/not-much">imgios/not-much</a>
+        
+    </p>
+</div>
+
+  </footer>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
