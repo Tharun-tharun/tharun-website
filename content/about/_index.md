@@ -36,7 +36,7 @@ My projects:
 - [movie recommendation system](https://github.com/Tharun-tharun/Movie-Recommendation-System-with-Sentiment-Analysis) -- 30+ stars
 - [neural style transfer](https://github.com/Tharun-tharun/Neural-Style-Transfer-Using-Pytorch) -- good enough stars, i guess :)
 
-Let’s connect if you’re building in the agentic AI space. I’d love to collaborate and learn more from the community! [twitter]() 💬🤝 
+Let’s connect if you’re building in the agentic AI space. I’d love to collaborate and learn more from the community! [twitter](https://x.com/tharunp_33) 💬🤝 
 
 Fun fact: I can type at close to 98 wpm
 
