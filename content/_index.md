@@ -1,5 +1,5 @@
 ---
-lead: "👨🏻‍💻 Machine Learning Engineer @ The World Bank Group"
+lead: "👨🏻‍💻 Data Scientist @ The World Bank Group"
 ---
 
 I’m Tharun Poobalan, with a Master's Degree in Robotics and Artificial Intelligence, in love with everything related to casualAI Action ➕ Feedback. I usually make things to learn something new, using different technologies and most of the time they’re a public repository. Feel free to read more [about myself 🤖](./about).
