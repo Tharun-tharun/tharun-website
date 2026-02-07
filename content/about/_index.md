@@ -8,13 +8,17 @@ draft = false
 
 🚀 Researcher at Heart 💡 Creator at Work 🧠 inspired by ~ Maximus Decimus Meridius
 
-I graduated with a Masters’s degree from [Arizona State University](https://www.asu.edu/) with my thesis work in computer vision.
+I graduated with a Masters’s degree from [Arizona State University](https://www.asu.edu/) with a thesis work in computer vision.
+
+Currently, I work on building digital twin systems using multi-agent architectures deployed into production live environment across 5+ different countries, developing and experimenting by leveraging Small Language Models doing multiple proofs of concept and experimenting to on-prem environments. Also, I mentor junior engineers and work closely with policy stakeholders and clients to make AI practical and reliable for decision making system for better banking.
 
 I lead machine learning at EPICS. I just genuinely love pushing the boundaries of intelligent system to build things that actually move the needle. At EPICS, I’ve worked fine-tuning open source LLMs on exponential real world datasets also by integrating and deploying end-to-end TTS (Text-to-Speech) synthesis model for real-time voice driven interactions. I’ve designed scalable, cost effective pipelines that bring these models into production with precision. What gets me fired up is combining language models is where intelligent agents meet infrastructure because that’s where innovation turns into real world impact.
 
 ###### ongoing projects 🔭
 
-Lately, I’ve been exploring the agentic AI systems using Reinforcement Learning with no human feedback. I’m now working towards open source projects that explore multi-agent collaboration with self-improving systems and dynamic tool usage like Model Context Protocol (MCP). I’m excited about the future of foundation models that don’t just respond but plan, adapt, work together and even surprise you. It's a small glimpse into what's possible when we empower intelligence with reasoning and autonomy.
+- analyzing behavioural of LLM models to study its reasonings specifically beyond original training cutoffs, to understand its beyond capabilties.   
+
+- worked towards multi-agent collaboration with self-improving systems and dynamic tool usage like Model Context Protocol (MCP). I’m excited about the future of foundation models that don’t just respond but plan, adapt, work together and even surprise you. It's a small glimpse into what's possible when we empower intelligence with reasoning and autonomy.
 
 - `50% coding/implementation like building and optimizing projects` 
 - `25% keeping up with machine learning topics/reading papers/blogs`
